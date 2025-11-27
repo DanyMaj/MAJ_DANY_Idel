@@ -215,6 +215,7 @@ RectTransform:
   m_Children:
   - {fileID: 494059048}
   - {fileID: 125000807}
+  - {fileID: 1322008735}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -479,9 +480,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 670715560}
-  - {fileID: 1322008735}
+  m_Children: []
   m_Father: {fileID: 22299235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -956,12 +955,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 494059048}
+  m_Father: {fileID: 1322008735}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 280.6215, y: 39.791626}
+  m_SizeDelta: {x: 561.243, y: 4.7915926}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &670715561
 MonoBehaviour:
@@ -1093,7 +1092,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GoldManager
   goldAmount: 0
   power: 0
+  powerPrice: 0
   goldText: {fileID: 670715561}
+  powerText: {fileID: 0}
+  powerGoldText: {fileID: 1680964321}
 --- !u!4 &787995197
 Transform:
   m_ObjectHideFlags: 0
@@ -1192,7 +1194,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 841268234}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 787995196}
+        m_TargetAssemblyTypeName: GoldManager, Assembly-CSharp
+        m_MethodName: ChangePower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &841268234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1245,7 +1259,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GoldManager
   goldAmount: 0
   power: 0
+  powerPrice: 0
   goldText: {fileID: 0}
+  powerText: {fileID: 0}
+  powerGoldText: {fileID: 0}
 --- !u!1 &847610613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,12 +1768,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1815256065}
-  m_Father: {fileID: 494059048}
+  - {fileID: 670715560}
+  m_Father: {fileID: 22299235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 535, y: -252.49998}
+  m_SizeDelta: {x: 561.243, y: 249.7916}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1322008736
 MonoBehaviour:
