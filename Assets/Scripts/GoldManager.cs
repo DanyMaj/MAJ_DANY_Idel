@@ -13,19 +13,31 @@ public class GoldManager : MonoBehaviour
     public bool shouldGoldRiseWithTime;
     public int powerPrice;
     public int timePower;
+    public int timePower2;
+    public int timePower3;
     public int timePrice;
+    public int timePrice2;
+    public int timePrice3;
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI powerText;
     public TextMeshProUGUI powerPriceText;
     public TextMeshProUGUI timePowerText;
+    public TextMeshProUGUI timePower2Text;
+    public TextMeshProUGUI timePower3Text;
     public TextMeshProUGUI timePowerPriceText;
+    public TextMeshProUGUI timePowerPrice2Text;
+    public TextMeshProUGUI timePowerPrice3Text;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         timePower = 0;
-        timeGold = 25;
+        timePower2 = 0;
+        timePower3 = 0;
+        timeGold = 0;
         timePrice = 100;
+        timePrice2 = 500;
+        timePrice3 = 1200;
         power = 0;
         powerPrice = 10;
         StartCoroutine(autoGold());
@@ -46,8 +58,33 @@ public class GoldManager : MonoBehaviour
             shouldGoldRiseWithTime = true;
             goldAmount -= timePrice;
             timePrice = Mathf.CeilToInt(timePrice * 2.2f);
-            timeGold = Mathf.CeilToInt(timeGold * 1.1f);
+            timeGold += 50;
             timePower += 1;
+        }
+    }
+
+    public void LaunchCoroutine2()
+    {
+
+        if (goldAmount >= timePrice2)
+        {
+            shouldGoldRiseWithTime = true;
+            goldAmount -= timePrice2;
+            timePrice2 = Mathf.CeilToInt(timePrice2 * 2.2f);
+            timeGold += 200;
+            timePower2 += 1;
+        }
+    }
+    public void LaunchCoroutine3()
+    {
+
+        if (goldAmount >= timePrice3)
+        {
+            shouldGoldRiseWithTime = true;
+            goldAmount -= timePrice3;
+            timePrice3 = Mathf.CeilToInt(timePrice3 * 2.2f);
+            timeGold += 500;
+            timePower2 += 1;
         }
     }
 
@@ -57,7 +94,6 @@ public class GoldManager : MonoBehaviour
         {
             goldAmount -= powerPrice;
             powerPrice = Mathf.CeilToInt(powerPrice * 2.2f);
-            
             power += 1;
         }
     }
@@ -126,6 +162,10 @@ public class GoldManager : MonoBehaviour
         powerText.text = power.ToString("0");
         timePowerText.text = timePower.ToString("0");
         timePowerPriceText.text = timePrice.ToString("0");
+        timePowerPrice2Text.text = timePrice2.ToString("0");
+        timePower2Text.text = timePower2.ToString("0");
+        timePowerPrice3Text.text = timePrice3.ToString("0");
+        timePower3Text.text = timePower3.ToString("0");
     }
 
 }
